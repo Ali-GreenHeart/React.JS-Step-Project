@@ -1,1 +1,0 @@
-her hansi sozleri yaz
