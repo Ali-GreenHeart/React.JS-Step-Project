@@ -14,7 +14,6 @@ function edit() {
 function deleteF() {
     console.log(" i am delete clicker")
 }
-
 function App() {
   return (
     <div >
