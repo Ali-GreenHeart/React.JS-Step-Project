@@ -1,16 +1,26 @@
 import React, {Component} from 'react';
-import Button from "./Button/Button";
+import NoteItemWrapper from "./NoteItemWrapper/NoteItemWrapper";
 
 class FakeApp extends Component {
 
-    testFunction = () => {
-        console.log("button worked!!")
+    state = {
+        notes:[]
     };
+    componentDidMount() {
+        fetch("jsonserver/db.json")
+            .then(r => r.json())
+            .then(
+                (data) => {
+                    this.setState({notes: data.notes});
+                },
+            );
+
+    }
 
     render() {
         return (
             <div>
-                <Button text={"button"} clicked={this.testFunction} />
+                <NoteItemWrapper notes = {this.state.notes}/>
             </div>
         );
     }
