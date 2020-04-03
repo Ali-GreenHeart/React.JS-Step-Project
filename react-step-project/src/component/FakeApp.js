@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NoteItemWrapper from "./NoteItemWrapper/NoteItemWrapper";
+import NoteItemWrapper from "../components/NoteItemWrapper/NoteItemWrapper";
 
 class FakeApp extends Component {
 
