@@ -2,30 +2,47 @@ import React, {Component} from 'react';
 import NoteItemWrapper from "./components/NoteItemWrapper/NoteItemWrapper";
 import Header from "./components/Header/header";
 import {Route} from "react-router-dom";
-import Actual from "./component/Actual";
-import Archive from "./component/Archive";
-import Create from "./component/Create";
-import Main from "./component/Main";
-import CreatePage from "./components/CreatePage/CreatePage";
+import NoteItem from "./components/NoteItem/NoteItem";
+import "./components/NoteItemWrapper/NoteItemWrapper.js"
+
 
 class FakeApp extends Component {
 
     state = {
         notes:[]
     };
+
+    api ="http://localhost:3000";
+
     componentDidMount() {
-        fetch("jsonserver/db.json")
+        fetch(`${this.api}/notes`)
             .then(r => r.json())
             .then(
                 (data) => {
-                    this.setState({notes: data.notes});
+                    this.setState({notes: data});
+                    console.log(data);
                 },
             );
 
     }
 
     loadHome = () =>{
-        return <NoteItemWrapper notes={this.state.notes}/>
+        return    <div className={"note-item-wrapper"}>
+            {
+                this.state.notes.map((notes) => {
+                    return <NoteItem  title={notes.title}
+                                      id={notes.id}
+                                      content={notes.content}
+                                      color={notes.color}
+                                      width={"250px"}
+                                      api={this.api}
+
+                    />
+
+
+                })
+            }
+        </div>
     };
 
     loadActual = () =>{
@@ -40,14 +57,23 @@ class FakeApp extends Component {
         return <h1>Create burda olmalıdı</h1>
     };
 
+    loadSingleNote = (id) =>{
+        return <h1>Single NOte </h1>
+    };
+
+
     render() {
         return (
             <div>
                 <Header/>
                 <Route path={'/'} exact render={this.loadHome}/>
                 <Route path={'/actual'} render={this.loadActual}/>
-                <Route path={'/archive'} component={this.loadArchive}/>
-                <Route path={'/create'} component={this.loadCreate}/>
+                <Route path={'/archive'} render={this.loadArchive}/>
+                <Route path={'/create'} render={this.loadCreate}/>
+                <Route path={'/notes/:noteID'} render={this.loadSingleNote}/>
+
+
+
             </div>
         );
     }
