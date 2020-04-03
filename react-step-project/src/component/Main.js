@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Buttons from "./Buttons";
-import ModalWindow from "./ModalWindow";
+import Buttons from "../components/Button/Buttons";
+import ModalWindow from "../components/ModalWindow/ModalWindow";
 import "../App.scss"
 
 class Main extends Component {

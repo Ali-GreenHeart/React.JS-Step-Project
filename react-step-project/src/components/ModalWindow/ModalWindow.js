@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 const ModalWindow =({header,closeicon, actions,close})=> {
     return (
         <div className="mdl">
@@ -12,6 +11,6 @@ const ModalWindow =({header,closeicon, actions,close})=> {
         </div>
     );
 
-}
+};
 
 export default ModalWindow;
