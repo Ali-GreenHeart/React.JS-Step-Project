@@ -9,9 +9,11 @@ class NoteItemWrapper extends Component {
             {
                 this.props.notes.map((notes) => {
                     return <NoteItem  title={notes.title}
+                                      id={notes.id}
                                       content={notes.content}
                                       color={notes.color}
                                       width={"250px"}
+                                      api={this.props.api}
 
                         />
 
