@@ -1,7 +1,8 @@
 import React from 'react';
+import "./ModalWindow.scss"
 const ModalWindow =({header,closeicon, actions,close})=> {
     return (
-        <div className="mdl">
+        <div className="modal">
             <header>
                 {header}
                 {closeicon && <button onClick={close} className="close">X</button>}
