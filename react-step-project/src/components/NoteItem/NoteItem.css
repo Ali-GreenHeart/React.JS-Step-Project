@@ -1,10 +1,10 @@
 .note {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  color: black;
-  margin: 15px;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    color: black;
+    margin: 15px;
+    flex-wrap: wrap;
 }
 .note-title{
     text-align: center;
@@ -15,4 +15,4 @@
 .note-content{
     text-align: center;
     padding: 10px;
-  }
+}

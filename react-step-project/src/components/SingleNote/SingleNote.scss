@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 .buttons{
   display: flex;
@@ -13,14 +12,14 @@
 .note-item{
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 30%;
   margin: 40px;
 }
 .note-header{
- min-height: 70px;
+  min-height: 70px;
   border: 1px solid black;
   font-size: 25px;
- }
+}
 .note-header:disabled{
   color: black;
 }
@@ -30,5 +29,19 @@
   font-size: 16px;
 }
 .note-body:disabled{
-   color: black;
+  color: black;
+}
+.buttons button{
+  border-radius: 10%;
+  background-color:lightblue;
+  border: none;
+  outline: none;
+  color: gray;
+}
+.btn{
+  margin: 30px 16px;
+  padding: 11px 0px;
+  width: 13%;
+  outline: none;
+  border: none;;
 }
