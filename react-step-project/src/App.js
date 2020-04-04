@@ -1,32 +1,33 @@
 import React, {Component} from 'react';
-import NoteItemWrapper from "./components/NoteItemWrapper/NoteItemWrapper";
 import Header from "./components/Header/header";
 import {Route} from "react-router-dom";
 import NoteItem from "./components/NoteItem/NoteItem";
-import "./components/NoteItemWrapper/NoteItemWrapper.js"
-// import Routes from "./component/routes";
+import SingleNote from "./components/SingleNote/SingleNote";
+
 
 
 class FakeApp extends Component {
-
     state = {
         notes:[],
-        archived: [],
-        actuals:[]
+        selectedId:null
+
     };
 
     api ="http://localhost:3002";
 
-    componentDidMount() {
+    fetchingData = () =>{
         fetch(`${this.api}/notes`)
             .then(r => r.json())
             .then(
                 (data) => {
                     this.setState({notes: data});
-                    console.log(data);
                 },
             );
+        console.log("fetch");
+    };
 
+    componentDidMount() {
+        this.fetchingData();
     }
 
     loadHome = () =>{
@@ -39,6 +40,8 @@ class FakeApp extends Component {
                                       color={notes.color}
                                       width={"250px"}
                                       api={this.api}
+                                      getId={this.getId}
+                                      key={notes.id}
 
                     />
 
@@ -46,6 +49,9 @@ class FakeApp extends Component {
                 })
             }
         </div>
+    };
+    getId = (id) =>{
+        this.setState({selectedId:id});
     };
 
     loadActual = () =>{
@@ -69,6 +75,7 @@ class FakeApp extends Component {
     };
 
     loadArchive = () =>{
+
         let archived = this.state.notes.filter(item => item.status === "archive");
         return    <div className={"note-item-wrapper"}>
             {
@@ -92,9 +99,16 @@ class FakeApp extends Component {
         return <h1>Create burda olmalıdı</h1>
     };
 
-    loadSingleNote = (id) =>{
-        return <h1>Single NOte </h1>
-    };
+   loadSingleNote = () =>{
+       return <div>
+             <SingleNote api={this.api}
+                         id={this.state.selectedId}
+                         fetch={this.fetchingData}
+             />
+           </div>
+
+
+   };
 
 
     render() {
@@ -107,9 +121,6 @@ class FakeApp extends Component {
                 <Route path={'/archive'} render={this.loadArchive}/>
                 <Route path={'/create'} render={this.loadCreate}/>
                 <Route path={'/notes/:noteID'} render={this.loadSingleNote}/>
-
-
-
             </div>
         );
     }

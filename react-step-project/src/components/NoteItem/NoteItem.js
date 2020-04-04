@@ -6,12 +6,11 @@ class NoteItem extends Component {
         backgroundColor: this.props.color,
         width:this.props.width
     };
-
     api=this.props.api;
 
     render() {
         return (
-            <Link to={`notes/${this.props.id}`}>
+            <Link to={`notes/${this.props.id}`} onClick={()=>{this.props.getId(this.props.id)}}>
                 <div className={"note"}  style={this.style}>
                             <div className="note-title">
                                 {this.props.title}

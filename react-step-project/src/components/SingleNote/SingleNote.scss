@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  margin: 0 40px;
+  justify-content: space-evenly;
+}
+.note-item{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 40px;
+  min-height: 400px;
+}
+.note-title{
+
+}
+.note-content{
+
+}
