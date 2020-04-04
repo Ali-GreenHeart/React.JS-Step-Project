@@ -4,15 +4,18 @@ import Header from "./components/Header/header";
 import {Route} from "react-router-dom";
 import NoteItem from "./components/NoteItem/NoteItem";
 import "./components/NoteItemWrapper/NoteItemWrapper.js"
+// import Routes from "./component/routes";
 
 
 class FakeApp extends Component {
 
     state = {
-        notes:[]
+        notes:[],
+        archived: [],
+        actuals:[]
     };
 
-    api ="http://localhost:3000";
+    api ="http://localhost:3002";
 
     componentDidMount() {
         fetch(`${this.api}/notes`)
@@ -46,11 +49,43 @@ class FakeApp extends Component {
     };
 
     loadActual = () =>{
-        return <h1>Actual notes burda olmalıdı</h1>
+        let actuals = this.state.notes.filter(item => item.status === "actual");
+        return    <div className={"note-item-wrapper"}>
+            {
+                actuals.map((notes) => {
+                    return <NoteItem  title={notes.title}
+                                      id={notes.id}
+                                      content={notes.content}
+                                      color={notes.color}
+                                      width={"250px"}
+                                      api={this.api}
+                    />
+
+
+                })
+            }
+        </div>
+
     };
 
     loadArchive = () =>{
-        return <h1>Archive notes burda olmalıdı</h1>
+        let archived = this.state.notes.filter(item => item.status === "archive");
+        return    <div className={"note-item-wrapper"}>
+            {
+                archived.map((notes) => {
+                    return <NoteItem  title={notes.title}
+                                      id={notes.id}
+                                      content={notes.content}
+                                      color={notes.color}
+                                      width={"250px"}
+                                      api={this.api}
+                    />
+
+
+                })
+            }
+        </div>
+
     };
 
     loadCreate = () =>{
@@ -66,6 +101,7 @@ class FakeApp extends Component {
         return (
             <div>
                 <Header/>
+
                 <Route path={'/'} exact render={this.loadHome}/>
                 <Route path={'/actual'} render={this.loadActual}/>
                 <Route path={'/archive'} render={this.loadArchive}/>
