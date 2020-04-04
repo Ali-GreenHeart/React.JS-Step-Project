@@ -1,9 +1,19 @@
 {
-  "notes": [
+
+  "notes" : [
+    {
+      "id": "1",
+      "title": "note title 1",
+      "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
+      "status":"archive",
+      "color": "aqua"
+    },
+
     {
       "id": "2",
       "title": "note title 2",
       "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
+
       "status": "archive",
       "color": "aqua"
     },
@@ -14,18 +24,21 @@
       "status": "actual",
       "color": "aqua"
     },
-    {
-      "id": "1",
-      "title": "note title 1",
-      "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
-      "status": "archive",
-      "color": "aqua"
-    },
+
     {
       "id": "3",
       "title": "note title 3",
       "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
       "status": "actual",
+
+     "color": "aqua"
+    },
+ 
+    {
+      "id": "4",
+      "title": "note title 4",
+      "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
+      "status":"archive",
       "color": "aqua"
     }
   ]

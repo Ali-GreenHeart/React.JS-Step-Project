@@ -2,14 +2,15 @@ import React, {Component} from 'react';
 import Header from "./components/Header/header";
 import {Route} from "react-router-dom";
 import NoteItem from "./components/NoteItem/NoteItem";
-import "./components/NoteItemWrapper/NoteItemWrapper.js"
 import SingleNote from "./components/SingleNote/SingleNote";
+
 
 
 class FakeApp extends Component {
     state = {
         notes:[],
         selectedId:null
+
     };
 
     api ="http://localhost:3002";
@@ -54,11 +55,44 @@ class FakeApp extends Component {
     };
 
     loadActual = () =>{
-        return <h1>Actual notes burda olmalıdı</h1>
+        let actuals = this.state.notes.filter(item => item.status === "actual");
+        return    <div className={"note-item-wrapper"}>
+            {
+                actuals.map((notes) => {
+                    return <NoteItem  title={notes.title}
+                                      id={notes.id}
+                                      content={notes.content}
+                                      color={notes.color}
+                                      width={"250px"}
+                                      api={this.api}
+                    />
+
+
+                })
+            }
+        </div>
+
     };
 
     loadArchive = () =>{
-      return <h1>archive</h1>
+
+        let archived = this.state.notes.filter(item => item.status === "archive");
+        return    <div className={"note-item-wrapper"}>
+            {
+                archived.map((notes) => {
+                    return <NoteItem  title={notes.title}
+                                      id={notes.id}
+                                      content={notes.content}
+                                      color={notes.color}
+                                      width={"250px"}
+                                      api={this.api}
+                    />
+
+
+                })
+            }
+        </div>
+
     };
 
     loadCreate = () =>{
@@ -81,6 +115,7 @@ class FakeApp extends Component {
         return (
             <div>
                 <Header/>
+
                 <Route path={'/'} exact render={this.loadHome}/>
                 <Route path={'/actual'} render={this.loadActual}/>
                 <Route path={'/archive'} render={this.loadArchive}/>
