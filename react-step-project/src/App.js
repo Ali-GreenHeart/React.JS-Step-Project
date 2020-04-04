@@ -3,10 +3,12 @@ import Header from "./components/Header/header";
 import {Route} from "react-router-dom";
 import NoteItem from "./components/NoteItem/NoteItem";
 import SingleNote from "./components/SingleNote/SingleNote";
+import "./components/NoteItemWrapper/NoteItemWrapper.css"
+import CreatePage from "./components/CreatePage/CreatePage";
 
 
 
-class FakeApp extends Component {
+class App extends Component {
     state = {
         notes:[],
         selectedId:null
@@ -65,6 +67,8 @@ class FakeApp extends Component {
                                       color={notes.color}
                                       width={"250px"}
                                       api={this.api}
+                                      getId={this.getId}
+                                      key={notes.id}
                     />
 
 
@@ -86,6 +90,8 @@ class FakeApp extends Component {
                                       color={notes.color}
                                       width={"250px"}
                                       api={this.api}
+                                      getId={this.getId}
+                                      key={notes.id}
                     />
 
 
@@ -96,7 +102,9 @@ class FakeApp extends Component {
     };
 
     loadCreate = () =>{
-        return <h1>Create burda olmalıdı</h1>
+        return <CreatePage  api={this.api}
+                            fetch={this.fetchingData}
+        />
     };
 
    loadSingleNote = () =>{
@@ -126,4 +134,4 @@ class FakeApp extends Component {
     }
 }
 
-export default FakeApp;
+export default App;

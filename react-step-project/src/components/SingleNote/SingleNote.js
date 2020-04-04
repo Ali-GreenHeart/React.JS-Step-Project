@@ -56,7 +56,9 @@ class SingleNote extends Component {
              "Content-type": "application/json"}
         })
             .then(response => response.json())
-            .then(json => console.log(json));
+            .then(
+                this.props.fetch
+            );
 
     };
 

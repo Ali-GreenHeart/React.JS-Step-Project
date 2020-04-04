@@ -1,54 +1,54 @@
 import React, {Component} from 'react';
-import NoteColor from './NoteColor/NoteColor'
+import './CreatePage.scss'
+let colors = ["#a4eb34","#34a8eb", "#ebd634", "#eb346b"];
 
 class CreatePage extends Component{
-    style={
-        main:{
-          display:'flex',
-          justifyContent:'center',
-          alignItems:'center',
-          flexDirection:'column'
-        },
-      header:{
-            fontSize:'30px',
-          fontWeight:"700"
-
-      },
-        smallText:{
-            margin:'10px',
-            width:'300px',
-            height:'20px',
-            borderColor:'#494c52',
-            borderRadius: "4px"
-        },
-        bigText:{
-            margin:'10px',
-            width: '400px',
-            height: '300px',
-            borderRadius:'30px',
-            borderColor:'#494c52',
-        },
-        NoteColor: {
-
-        }
-    };
     state={
-        color:'yellow',
-        checked:false
+        formData:{
+            id: Date.now(),
+            title : "",
+            content: "",
+            status : "actual",
+            color :colors[Math.floor(Math.random() * colors.length)]
+        },
+            submitAuth:false,
+
     };
+
+    formChangeHandler = (e) => {
+        let state={...this.state.formData,[e.target.name]:e.target.value};
+        this.setState({
+            formData:state
+        });
+    };
+    submitHandler = (e) => {
+        let obj=this.state.formData;
+        e.preventDefault();
+        fetch(`${this.props.api}/notes`, {
+            method: "POST",
+            body: JSON.stringify(
+                obj
+            ),
+            headers: {
+                "Content-type": "application/json"}
+
+        }).then((res) => res.json())
+            .then(this.props.fetch)
+    };
+
+
     render() {
         return (
             <>
-            {/*<Navbar/>*/}
-            <div style={this.style.main}>
-            <h1 style={this.style.header}>Fill Data</h1>
-                <input style={this.style.smallText} type={'text'} placeholder={'Title'}/>
-                <input style={this.style.bigText} type={'textarea'}  placeholder={'Note Text'}/>
-                <NoteColor style={this.style.NoteColor}/>
-            </div>
+                <h1 className={"header"}>Fill Data</h1>
+                <form onChange={this.formChangeHandler} onSubmit={this.submitHandler}>
+                    <input type="text" placeholder={"title"} name={"title"} className={"title"}/>
+                    <input type="textarea" placeholder={"text"} name={"content"} className={"content"} style={{backgroundColor:this.state.formData.color}}/>
+                    <input type="submit" className={"submit-button"}/>
+                </form>
+
             </>
         );
     }
 }
-
 export default CreatePage;

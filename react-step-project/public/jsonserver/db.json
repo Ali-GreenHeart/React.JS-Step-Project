@@ -1,45 +1,39 @@
 {
-
-  "notes" : [
-    {
-      "id": "1",
-      "title": "note title 1",
-      "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
-      "status":"archive",
-      "color": "aqua"
-    },
-
+  "notes": [
     {
       "id": "2",
       "title": "note title 2",
       "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
-
-      "status": "archive",
-      "color": "aqua"
-    },
-    {
-      "id": "5",
-      "title": "note title 5",
-      "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
       "status": "actual",
       "color": "aqua"
     },
-
     {
       "id": "3",
       "title": "note title 3",
       "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
-      "status": "actual",
-
-     "color": "aqua"
+      "status": "archive",
+      "color": "aqua"
     },
- 
     {
       "id": "4",
       "title": "note title 4",
       "content": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia quos recusandae sequi tempora? Ab aliquam assumenda beatae corporis delectus dolore, dolorem ducimus eos fuga iusto nobis, perferendis tempore totam?\n",
-      "status":"archive",
+      "status": "archive",
       "color": "aqua"
+    },
+    {
+      "id": 1586011150242,
+      "title": "nvnbfxcgnmvnbn",
+      "content": "bhjhhhhhhhhhhhhhhh",
+      "status": "archive",
+      "color": "#a4eb34"
+    },
+    {
+      "id": 1586011403195,
+      "title": "nermin",
+      "content": "ffdsfasdfc",
+      "status": "actual",
+      "color": "#eb346b"
     }
   ]
 }
