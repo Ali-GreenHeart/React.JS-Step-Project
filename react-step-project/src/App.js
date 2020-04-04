@@ -3,7 +3,6 @@ import Header from "./components/Header/header";
 import {Route} from "react-router-dom";
 import NoteItem from "./components/NoteItem/NoteItem";
 import SingleNote from "./components/SingleNote/SingleNote";
-import "./components/NoteItemWrapper/NoteItemWrapper.css"
 import CreatePage from "./components/CreatePage/CreatePage";
 
 

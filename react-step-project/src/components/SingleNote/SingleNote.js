@@ -6,9 +6,10 @@ import { Redirect} from "react-router-dom";
 
 class SingleNote extends Component {
     state={
-        noteItem:{},
         showModal:false,
-        redirect: false
+        redirect: false,
+        edit:true
+
     };
 
     toggleModal=()=>{
@@ -27,11 +28,16 @@ class SingleNote extends Component {
             .then(r => r.json())
             .then(
                 (data) => {
-                    this.setState({noteItem:data})
+                    this.setState({title:data.title});
+                    this.setState({content:data.content});
+                    this.setState({color:data.color})
+
+
                 },
             );
-    }
 
+
+    }
     deleteNote = () =>{
         fetch(`${this.props.api}/notes/${this.props.id}`, {
             method: 'delete'
@@ -62,16 +68,36 @@ class SingleNote extends Component {
 
     };
 
+    editNote = (e) => {
+        this.setState({[e.target.name]:e.target.value});
+        console.log(e.target.name);
+        fetch(`${this.props.api}/notes/${this.props.id}`, {
+                method: "PATCH",
+                body: JSON.stringify({
+                    [e.target.name]:e.target.value
+                }),
+                headers: {
+                    "Content-type": "application/json"}
+            })
+                .then(response => response.json())
+                .then(
+                    this.props.fetch
+                );
+
+    };
+    editButtonHandle = () =>{
+        this.setState({edit:!this.state.edit})
+    };
 
     render() {
         return (
             <div className={"container"}>
-                <div className={"note-item"} style={{backgroundColor:this.state.noteItem.color}}>
-                    <div className={"note-title"}>{this.state.noteItem.title}</div>
-                    <div className={"note-content"}>{this.state.noteItem.content}</div>
+                <div className={"note-item"}>
+                    <input disabled={this.state.edit} name={"title"}  onChange={this.editNote} type="text" className={"note-header"} defaultValue={this.state.title} style={{backgroundColor:this.state.color}}/>
+                    <input disabled={this.state.edit} name={"content"} onChange={this.editNote} type="textarea" className={"note-body"} defaultValue={this.state.content}  style={{backgroundColor:this.state.color}}/>
                 </div>
                 <div className="buttons">
-                    <Buttons text={"EDIT"} />
+                    <Buttons text={this.state.edit?"EDIT":"SAVE"} onClick={this.editButtonHandle}/>
                     <Buttons text={"ARCHİVE"} onClick={this.addArchive}/>
                     <Buttons text={"DELETE"} onClick={this.toggleModal}/>
 
