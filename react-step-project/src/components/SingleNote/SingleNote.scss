@@ -1,26 +1,40 @@
 .container{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-
+  justify-content: space-around;
 }
 .buttons{
   display: flex;
   flex-direction: column;
   margin: 0 40px;
-  justify-content: space-evenly;
+  justify-content:center;
+}
+.buttons button{
+  border-radius: 10%;
+  background-color:lightblue;
+  border: none;
+  outline: none;
+  color: gray;
+}
+.btn{
+  margin: 30px 16px;
+  padding: 11px 0px;
+  width: 13%;
+  outline: none;
+  border: none;;
 }
 .note-item{
   display: flex;
   flex-direction: column;
-  width: 60%;
-  margin: 40px;
+  width: 30%;
+  margin: 40px ;
 }
 .note-header{
- min-height: 70px;
+  min-height: 70px;
   border: 1px solid black;
   font-size: 25px;
- }
+  text-align: center;
+}
 .note-header:disabled{
   color: black;
 }
@@ -28,7 +42,8 @@
   min-height: 400px;
   border: none;
   font-size: 16px;
+  text-align: center;
 }
 .note-body:disabled{
-   color: black;
+  color: black;
 }
