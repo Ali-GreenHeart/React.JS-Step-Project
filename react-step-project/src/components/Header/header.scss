@@ -1,20 +1,28 @@
-.header{
-  width: 100%;
+.navbar{
   display: flex;
-  justify-content: space-evenly;
-  margin: 20px auto;
+  justify-content: space-between;
+  margin: 20px 40px;
   font-weight: normal !important;
   font-size: 25px !important;
+
 }
 .tabs{
-  width: 50%;
   display: flex;
 }
-.tabs li{
-  list-style: none;
-  border: 1px solid lightskyblue;
-  background-color: lightblue;
-  padding: 7px 20px;
+.tabs a{
+  background-color: #34a8eb;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 25px;
+}
+.tabs li:hover{
+  box-shadow: 0 5px 10px rgba(52,168,235,0.7);
+}
+a {
+  text-decoration: none;
+  color: white;
+
+
 }
 .logo-img img{
   height: 50px;

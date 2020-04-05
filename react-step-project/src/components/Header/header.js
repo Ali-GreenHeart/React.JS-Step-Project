@@ -6,19 +6,19 @@ class Header extends Component {
     render() {
         return (
 
-            <div className="header">
-                <div className={"logo-img"}>
-                    <img src={require("./logo/logo.png")} alt=""/>
+            <div className="navbar">
+                <Link to={'/'}>
+                    <div className={"logo-img"}>
+                        <img src={require("../../logo.png")} alt="logo"/>
+                    </div>
+                </Link>
+
+                <div className ="tabs">
+                    <Link to={'/actual'}>Actual</Link>
+                    <Link to={'/archive'}>Archive</Link>
+                    <Link to={'/create'}>Create</Link>
 
                 </div>
-                <ul className ="tabs">
-
-                    <li><Link to={'/'}>Home</Link></li>
-                    <li><Link to={'/actual'}>Actual</Link></li>
-                    <li><Link to={'/archive'}>Archive</Link></li>
-                    <li><Link to={'/create'}>Create</Link></li>
-
-                </ul>
             </div>
         );
     }

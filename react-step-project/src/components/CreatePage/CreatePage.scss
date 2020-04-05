@@ -5,29 +5,47 @@ form {
   flex-direction:column;
 }
 .header{
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 700;
   display: flex;
   justify-content: center;
+  color: #34a8eb;
 }
 .title{
-  margin:10px;
-  width: 300px;
-  height: 20px;
-  border-color: #494c52;
-  border-radius: 4px;
+  width: 500px;
+  height: 100px;
   outline: none;
+  border: none;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .content{
-  margin:10px;
-  width: 400px;
-  height: 300px;
-  border-radius: 30px;
-  border-color: #494c52;
+  font-size: 20px;
+  width: 500px;
+  height: 400px;
   outline:none;
+  border: none;
+  padding: 20px;
+  text-align: left;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .submit-button{
-  width: 200px;
+  width: 540px;
+  height: 60px;
+  margin: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  border: 0;
+  background-color: #34a8eb;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 25px;
 }
 
 .button{
@@ -38,7 +56,14 @@ form {
   &-container{
     display: flex;
     width: 500px;
+    text-align: center;
   }
+}
+.color{
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  justify-content: center;
 }
 .green{
   background-color: #a4eb34;

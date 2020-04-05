@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './CreatePage.scss'
 import {Redirect} from "react-router-dom";
-let colors = ["#a4eb34","#34a8eb", "#ebd634", "#eb346b"];
+let colors = ["#34a8eb","#ebd634","#a4eb34",  "#eb346b"];
 
 class CreatePage extends Component{
     state={
@@ -25,7 +25,7 @@ class CreatePage extends Component{
     formChangeHandler = (e) => {
         let stateData = {...this.state.formData,[e.target.name]:e.target.value};
         console.log(Object.keys(stateData).every(i => stateData[i].length > 0));
-        if (Object.keys(stateData).every(i => stateData[i].length != false))
+        if (Object.keys(stateData).every(i => stateData[i].length !== false))
         {
             this.setState({formData:stateData});
             this.setState({submitAuth:true})
@@ -65,20 +65,24 @@ class CreatePage extends Component{
     render() {
         return (
             <>
-                <h1 className={"header"}>Fill Data</h1>
+                <h1 className={"header"}>New Note</h1>
                 <form onChange={this.formChangeHandler} onSubmit={this.submitHandler}>
-                    <input type="text" name={"title"} className={"title"}/>
-                    <input type="textarea" name={"content"} className={"content"} style={{backgroundColor:this.state.formData.color}}/>
+                    <input type="text" name={"title"} className={"title"} style={{backgroundColor:this.state.formData.color}}/>
+                    <textarea name={"content"} className={"content"} />
 
-                        <span>Colors : </span>
-                        <div className={'button-container'}>
+                        <div className={"color"}>
+                            <span>Colors :</span>
+
+                            <div className={'button-container'}>
                             <span data-id={0} className={'blue button'} onClick={this.colorHandler} />
                             <span data-id={1} className={'yellow button'} onClick={this.colorHandler}/>
                             <span data-id={2} className={'green button'} onClick={this.colorHandler}/>
                             <span data-id={3} className={'red button'} onClick={this.colorHandler}/>
                         </div>
+                        </div>
 
-                    <input type="submit" className={"submit-button"} disabled={!this.state.submitAuth}/>
+
+                    <input type="submit" className={"submit-button"} disabled={!this.state.submitAuth} value={"CREATE"}/>
                 </form>
                 {this.Redirect()}
 
