@@ -1,6 +1,13 @@
-.tabs{
-  width: 40%;
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
   margin: 20px auto;
+  font-weight: normal !important;
+  font-size: 25px !important;
+}
+.tabs{
+  width: 50%;
   display: flex;
 }
 .tabs li{
@@ -8,4 +15,9 @@
   border: 1px solid lightskyblue;
   background-color: lightblue;
   padding: 7px 20px;
+}
+.logo-img img{
+  height: 50px;
+  width: 50px;
+  margin-top: 20px;
 }
