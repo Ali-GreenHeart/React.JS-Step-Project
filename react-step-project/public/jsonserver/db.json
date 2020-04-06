@@ -1,35 +1,32 @@
 {
   "notes": [
     {
-      "id": "2",
-      "title": "test1",
-      "content": "test 1",
+      "title": "test 1",
+      "content": "I hate JS",
       "status": "archive",
-      "color": "aqua",
-      "": ""
+      "color": "#a4eb34",
+      "id": 1
     },
     {
-      "id": "3",
-      "title": "test2",
-      "content": "test 2",
+      "title": "test 2",
+      "content": "teamwork is hard,I kinda hate it 0_0",
+      "status": "actual",
+      "color": "#ebd634",
+      "id": 2
+    },
+    {
+      "title": "test 3",
+      "content": "Narmin wants to sleep",
       "status": "archive",
-      "color": "aqua",
-      "": ""
+      "color": "#eb346b",
+      "id": 3
     },
     {
-      "title": "test3dczdc",
-      "content": "test 3d<d",
+      "title": "test 4",
+      "content": "İf we dont get full mark, its not my problem, okay guys? \nI definently wont be the one who will fix it.\nI dont want to touch this code for solid one week.I dont even want to see the repo link \n-_-",
       "status": "actual",
-      "color": "#34a8eb",
-      "id": 1586015431114,
-      "": ""
-    },
-    {
-      "title": "test 5",
-      "content": "test 5",
-      "status": "actual",
-      "color": "#34a8eb",
-      "id": 1586015431116
+      "color": "#eb346b",
+      "id": 4
     }
   ]
 }

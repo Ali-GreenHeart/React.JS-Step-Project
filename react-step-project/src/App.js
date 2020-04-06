@@ -4,7 +4,7 @@ import {Route} from "react-router-dom";
 import NoteItem from "./components/NoteItem/NoteItem";
 import SingleNote from "./components/SingleNote/SingleNote";
 import CreatePage from "./components/CreatePage/CreatePage";
-
+import "./App.scss"
 
 
 class App extends Component {
@@ -39,7 +39,6 @@ class App extends Component {
                                       id={notes.id}
                                       content={notes.content}
                                       color={notes.color}
-                                      width={"250px"}
                                       api={this.api}
                                       getId={this.getId}
                                       key={notes.id}
@@ -64,7 +63,6 @@ class App extends Component {
                                       id={notes.id}
                                       content={notes.content}
                                       color={notes.color}
-                                      width={"250px"}
                                       api={this.api}
                                       getId={this.getId}
                                       key={notes.id}
@@ -87,7 +85,6 @@ class App extends Component {
                                       id={notes.id}
                                       content={notes.content}
                                       color={notes.color}
-                                      width={"250px"}
                                       api={this.api}
                                       getId={this.getId}
                                       key={notes.id}
@@ -120,7 +117,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className={"App"}>
                 <Header/>
 
                 <Route path={'/'} exact render={this.loadHome}/>

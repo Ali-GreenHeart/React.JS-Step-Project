@@ -1,0 +1,15 @@
+.note-item-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0 55px;
+}
+body{
+  background-color: #f1f1f1;
+
+}
+.App{
+  min-height: 100vh;
+  margin: 0;
+}

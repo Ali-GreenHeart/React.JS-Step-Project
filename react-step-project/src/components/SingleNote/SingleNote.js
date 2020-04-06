@@ -94,7 +94,7 @@ class SingleNote extends Component {
             <div className={"container"}>
                 <div className={"note-item"}>
                     <input disabled={this.state.edit} name={"title"}  onChange={this.editNote} type="text" className={"note-header"} defaultValue={this.state.title} style={{backgroundColor:this.state.color}}/>
-                    <input disabled={this.state.edit} name={"content"} onChange={this.editNote} type="textarea" className={"note-body"} defaultValue={this.state.content}  style={{backgroundColor:this.state.color}}/>
+                    <textarea disabled={this.state.edit} name={"content"} onChange={this.editNote}  className={"note-body"} defaultValue={this.state.content} />
                 </div>
                 <div className="buttons">
                     <Buttons text={this.state.edit?"EDIT":"SAVE"} onClick={this.editButtonHandle}/>
@@ -120,8 +120,6 @@ class SingleNote extends Component {
                         />
                     </div>
                 }
-
-
             </div>
         );
     }

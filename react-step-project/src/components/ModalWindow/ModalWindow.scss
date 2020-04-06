@@ -1,8 +1,8 @@
 
 .modal{
   width: 30%;
-  padding:0 0 50px ;
-  background-color: lightblue;
+  padding:0 0 10px ;
+  background-color: white;
   align-items: center;
   border-radius: 5px;
   text-align: center;
@@ -23,11 +23,11 @@
   & header{
     width: 100%;
     padding: 15px 0;
-    background-color: rgba(0,0,0,0.1);
+    background-color: #34A8EB;
     display: flex;
     justify-content: space-evenly;
     font-size: 23px;
-    color:gray;
+    color: #ffffff;
   }
   &.close{
     font-size: 25px;
@@ -43,12 +43,7 @@
     margin: 20px auto;
     color: white;
     line-height: 40px;
+
   }
-  &.btn{
-    margin: 30px 16px;
-    padding: 11px 0px;
-    width: 13%;
-    outline: none;
-    border: none;
-  }
+
 }
